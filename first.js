@@ -1,6 +1,7 @@
 let messBox = document.getElementById('message-popup');
 let formBox = document.getElementById('container');
 let bgBox = document.getElementById('message-show');
+let showPass = document.querySelector('#userPass');
 
 function logFunc() {
     let userN = document.getElementById('userName').value;
@@ -10,15 +11,14 @@ function logFunc() {
 
     if(userN.length != 0 || userP.length != 0) {
         if(userN == "Jasfer" && userP == "perperper") {
-            bgBox.style.background = "green";
-            textResult.innerHTML = "Login Successfuly"
-            subResult.innerHTML = "Have a great day!"
+            textResult.innerHTML = "Login Successfuly";
+            subResult.innerHTML = "Welcome back, Chief!";
             messBox.classList.add('open-message');
             formBox.classList.add('close-container');
 
             isAdmin = true;
-        }else {
-            bgBox.style.background = "red";
+        }
+        else {
             textResult.innerHTML = "Account doesn't exist"
             subResult.innerHTML = "Please check your information"
             messBox.classList.add('open-message');
@@ -26,8 +26,14 @@ function logFunc() {
 
             isAdmin = false;
         }
-    }else {
-        
+    }
+    else {
+        textResult.innerHTML = "Invalid input"
+        subResult.innerHTML = "Please fill all the required forms"
+        messBox.classList.add('open-message');
+        formBox.classList.add('close-container');
+
+        isAdmin = false;
     }
 }
 
@@ -38,5 +44,17 @@ function closeMessage() {
     }else {
         messBox.classList.remove('open-message');
         location.href = "main.html";
+    }
+}
+
+let isShown = false;
+function showPassword() {
+    if(!isShown) {
+        showPass.setAttribute('type','text');
+        isShown = true;
+    }
+    else {
+        showPass.setAttribute('type','password');
+        isShown = false;
     }
 }
