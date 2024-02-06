@@ -10,7 +10,7 @@
 }
 
 body {
-    background: white;
+    background-color: white;
 }
 
 .wrapper {
@@ -28,6 +28,16 @@ body {
     text-align: center;
 }
 
+.build-text {
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 3px 0px black; 
+}
+
+.build-text p {
+    margin-top: 20px;
+}
+
 .container {
     position: absolute;
     top: 50%;
@@ -37,7 +47,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 75px;
     visibility: visible;
     transition: ease 0.1s;
 }
@@ -63,10 +73,10 @@ body {
 
 .message-box {
     border-radius: 15px;
-    width: 300px;
-    height: 100px;
+    border: 5px solid #48463F;
+    width: 350px;
     padding: 10px;
-    background: black;
+    background: #EFEBE7;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,34 +85,41 @@ body {
 
 .message-box .message {
     color: white;
-    font-size: 19px;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 2px 0px black;
+    font-size: 23px;
+    text-align: center;
 }
 
 .message-box p {
-    color: white;
-    margin-top: 3px;
-    font-size: 12px;
-}
-
-.message-box button {
     color: black;
-    background: white;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    margin-top: 25px;
-    width: 70px;
-    height: 30px;
-    transition: ease 0.2s;
+    margin-top: 20px;
+    font-size: 11px;
 }
 
-.message-box button:hover {
-    background: rgb(90, 205, 90);
+.message-box .ok-btn {
+    background-image: linear-gradient(to top, #63B210, #CEEB6B);
+    border-radius: 8px;
+    border: 1px solid rgb(33, 31, 31);
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 2px 0px black;
+    color: white;
+    outline: none;
+    margin-top: 25px;  
+    width: 70px;
+    height: 40px;
+    padding: 10px 20px;
+    transition: ease 0.1s;
+}
+
+.message-box .ok-btn:active {
+    transform: scale(0.9);
+    background-image: linear-gradient(to top, #71c714, #dfff77);
 }
 
 .desc {
     width: 400px;
-    margin-top: 12px;
+    margin-top: 20px;
 }
 
 .desc p {
@@ -111,20 +128,50 @@ body {
     text-align: center;
 }
 
-h2 {
+#text {
     color: white;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 3px 0px black;
+    font-size: 35px;
+}
+
+.register {
+    margin-top: 15px;
+}
+
+.register button {
+    color: white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 0px 3px 0px black;
+    background: transparent;
+    width: 300px;
+    height: 70px;
+    border: none;
+    padding: 20px;
+    transition: ease 0.1s;
+}
+
+.register span {
+    font-size: 30px;
+    transition: ease 0.1s;
+}
+
+.register span:active {
+    font-size: 28px;
 }
 
 .form {
-    background: black;
+    background: #EFEBE7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 300px;
     border-radius: 15px;
+    border: 5px solid #48463F;
     padding: 10px;
-    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.2);
+    transition: ease 0.1s;
 }
 
 .user-inputs {
@@ -138,11 +185,12 @@ h2 {
 .user-inputs input {
     width: 80%;
     margin: 11px;
-    padding: 7px;
+    padding: 6px;
     border-radius: 8px;
     outline: none;
-    border: none;
-    font-size: 11px;
+    border: 2px solid #48463F;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5) inset;
+    font-size: 10px;
 }
 
 .picture img{
@@ -156,23 +204,47 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-.buttons button {
-    background: rgb(46, 154, 46);
-    border-radius: 10px;
-    border: none;
+.buttons .login-btn {
+    color: white;
+    text-shadow: 0px 2px 0px black;
+    -webkit-text-stroke: 0.5px black;
+    background-image: linear-gradient(to top, #63B210, #CEEB6B);
+    border-radius: 8px;
+    border: 1px solid rgb(33, 31, 31);
     outline: none;
     width: 68px;
-    height: 25px;
-    padding: 5px;
+    height: 35px;
     margin: 12px;
-    color: white;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
-    transition: ease 0.2s;
+    transition: ease 0.1s;
 }
 
-.buttons button:hover {
-    background: rgb(90, 205, 90);
+.buttons .cancel-btn {
+    color: white;
+    text-shadow: 0px 2px 0px black;
+    -webkit-text-stroke: 0.5px black;
+    background-image: linear-gradient(to top, #CE3810, #F7BA6B);
+    border-radius: 8px;
+    border: 1px solid rgb(33, 31, 31);
+    outline: none;
+    width: 68px;
+    height: 35px;
+    margin: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: ease 0.1s;
 }
+
+.buttons .login-btn:active {
+    transform: scale(0.9);
+    background-image: linear-gradient(to top, #71c714, #dfff77);
+} 
+
+.buttons .cancel-btn:active {
+    transform: scale(0.9);
+    background-image: linear-gradient(to top, #f44515, #ffc06f);
+}   
