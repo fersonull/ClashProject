@@ -2,6 +2,8 @@ let messBox = document.getElementById('message-popup');
 let formBox = document.getElementById('container');
 let bgBox = document.getElementById('message-show');
 let showPass = document.querySelector('#userPass');
+let signInForm = document.querySelector('.form');
+let signUpForm = document.querySelector('.signup-form');
 
 function logFunc() {
     let userN = document.getElementById('userName').value;
@@ -20,7 +22,7 @@ function logFunc() {
         }
         else {
             textResult.innerHTML = "Account doesn't exist"
-            subResult.innerHTML = "Please check your information"
+            subResult.innerHTML = "Please check your information or create a new account"
             messBox.classList.add('open-message');
             formBox.classList.add('close-container');
 
@@ -56,5 +58,21 @@ function showPassword() {
     else {
         showPass.setAttribute('type','password');
         isShown = false;
+    }
+}
+
+let loginState = true;
+function signUp() {
+    if(loginState){
+        signUpForm.classList.add('signup-form-open');
+        signInForm.classList.add('close-form');
+        document.querySelector('.register-link').textContent = "Already have an account";
+        loginState = false;
+    }
+    else {
+        signUpForm.classList.remove('signup-form-open');
+        signInForm.classList.remove('close-form');
+        document.querySelector('.register-link').textContent = "Register Now";
+        loginState = true;
     }
 }
