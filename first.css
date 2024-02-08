@@ -92,9 +92,11 @@ body {
 }
 
 .message-box p {
+    width: 250px;
     color: black;
+    text-align: center;
     margin-top: 20px;
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .message-box .ok-btn {
@@ -128,7 +130,7 @@ body {
     text-align: center;
 }
 
-#text {
+.login-txt, .register-txt {
     color: white;
     -webkit-text-stroke: 0.5px black;
     text-shadow: 0px 3px 0px black;
@@ -140,18 +142,21 @@ body {
 }
 
 .register button {
-    color: white;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 0px 3px 0px black;
-    background: transparent;
-    width: 300px;
+    text-align: center;
+    background: transparent ;
+    width: 475px;
     height: 70px;
     border: none;
     padding: 20px;
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 0px 3px 0px black;
     transition: ease 0.1s;
 }
 
 .register span {
+    cursor: pointer;
     font-size: 30px;
     transition: ease 0.1s;
 }
@@ -171,20 +176,51 @@ body {
     border: 5px solid #48463F;
     padding: 10px;
     box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    transition: ease 0.2s;
+}
+
+.signup-form {
+    position: absolute;
+    top: 8px;
+    background: #EFEBE7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border-radius: 15px;
+    border: 5px solid #48463F;
+    padding: 10px;
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    visibility: hidden;
     transition: ease 0.1s;
 }
 
-.user-inputs {
+.signup-form-open {
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+.close-form {
+    visibility: hidden;
+    transform: scale(0);
+}
+
+.user-inputs, .signup-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 10px;
 }
 
-.user-inputs input {
+.user-inputs input, .signup-input input {
     width: 80%;
-    margin: 11px;
+    margin: 9px 11px;
     padding: 6px;
     border-radius: 8px;
     outline: none;
@@ -193,13 +229,19 @@ body {
     font-size: 10px;
 }
 
-.picture img{
+.picture img {
     text-align: center;
     width: 220px;
     margin-top: -200px;
 }
 
-.buttons {
+.builder-img {
+    text-align: center;
+    width: 220px;
+    margin-top: -150px;
+}
+
+.buttons, .signup-btn {
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -207,7 +249,7 @@ body {
     align-items: center;
 }
 
-.buttons .login-btn {
+.login-btn, .register-btn {
     color: white;
     text-shadow: 0px 2px 0px black;
     -webkit-text-stroke: 0.5px black;
@@ -223,7 +265,7 @@ body {
     transition: ease 0.1s;
 }
 
-.buttons .cancel-btn {
+.cancel-btn, .signup-cancel-btn {
     color: white;
     text-shadow: 0px 2px 0px black;
     -webkit-text-stroke: 0.5px black;
@@ -239,12 +281,12 @@ body {
     transition: ease 0.1s;
 }
 
-.buttons .login-btn:active {
+.login-btn:active, .register-btn:active {
     transform: scale(0.9);
     background-image: linear-gradient(to top, #71c714, #dfff77);
 } 
 
-.buttons .cancel-btn:active {
+.cancel-btn:active, .signup-cancel-btn:active {
     transform: scale(0.9);
     background-image: linear-gradient(to top, #f44515, #ffc06f);
 }   
